@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Raj Vinod P. - E-Visiting Card</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .card {
+      position: relative; /* allows wave inside */
+      background: white;
+      width: 600px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      padding-bottom: 80px; /* extra space at bottom for waves */
+      overflow: hidden;
+    }
+    .left {
+      flex: 1;
+      text-align: center;
+      border-right: 1px solid #ddd;
+      padding-right: 20px;
+    }
+    .left img {
+      width: 120px;
+    }
+    .cert {
+      font-size: 12px;
+      color: #333;
+      margin-top: 10px;
+      line-height: 1.4;
+    }
+    .right {
+      flex: 3;
+      padding-left: 20px;
+      text-align: left;
+    }
+    .right h2 {
+      margin: 5px 0;
+      color: #003366;
+    }
+    .right h4 {
+      margin: 5px 0 4px;
+      color: #555;
+      font-weight: normal;
+    }
+    .company {
+      font-weight: bold;
+      margin-bottom: 4px;
+      font-size: 18px;
+    }
+    .ministry {
+      font-size: 13px;
+      color: #444;
+      font-style: italic;
+      margin-bottom: 15px;
+    }
+    .info p {
+      margin: 6px 0;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    a {
+      color: #003366;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    /* waves design */
+    .wave {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      line-height: 0;
+    }
+    .wave svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    .wave path {
+      fill: #003366; /* dark navy blue */
+      opacity: 0.9;
+    }
+    .wave.second path {
+      fill: #0066cc; /* lighter blue */
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <!-- Left side logo -->
+    <div class="left">
+      <img src="mbpalogo.jpg" alt="Mumbai Port Logo">
+      <p class="cert">ISO 9001:2015 Port / <br>ISPS Compliant Port</p>
+    </div>
+
+    <!-- Right side details -->
+    <div class="right">
+      <h2>Raj Vinod P.</h2>
+      <h4>Senior Deputy Traffic Manager</h4>
+      <p class="company">Mumbai Port Authority</p>
+      <p class="ministry">(Ministry of Ports, Shipping and Waterways, Govt. of India)</p>
+
+      <div class="info">
+        <p>📍 Traffic Department, 1st Floor, Port House, Ballard Estate,<br>
+        Shoorji Vallabhdas Marg, Mumbai – 400001</p>
+        
+        <p>☎️ Tel: <a href="tel:+912266564443">+91 (22) 6656 4443</a><br>
+        📱 Mob: <a href="tel:+919526062733">+91 9526062733</a></p>
+        
+        <p>✉️ <a href="mailto:raj.vinod@mumbaiport.gov.in">raj.vinod@mumbaiport.gov.in</a><br>
+        🌐 <a href="https://www.mumbaiport.gov.in" target="_blank">www.mumbaiport.gov.in</a></p>
+      </div>
+    </div>
+
+    <!-- Blue waves footer -->
+    <div class="wave">
+      <svg viewBox="0 0 600 100" preserveAspectRatio="none">
+        <path d="M0,50 C150,100 450,0 600,50 L600,100 L0,100 Z"></path>
+      </svg>
+    </div>
+    <div class="wave second">
+      <svg viewBox="0 0 600 100" preserveAspectRatio="none">
+        <path d="M0,60 C200,110 400,10 600,60 L600,100 L0,100 Z"></path>
+      </svg>
+    </div>
+  </div>
+</body>
+</html>
