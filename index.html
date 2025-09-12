@@ -21,7 +21,7 @@
       display: flex;
       align-items: center;
       padding: 20px;
-      padding-bottom: 80px; /* extra space at bottom for waves */
+      padding-bottom: 50px; /* extra space at bottom for waves */
       overflow: hidden;
     }
     .left {
@@ -53,17 +53,18 @@
       color: #555;
       font-weight: normal;
     }
-    .company {
-      font-weight: bold;
-      margin-bottom: 4px;
-      font-size: 18px;
-    }
-    .ministry {
-      font-size: 13px;
-      color: #444;
-      font-style: italic;
-      margin-bottom: 15px;
-    }
+		.company {
+	  font-weight: bold;
+	  margin-bottom: 0;  /* no gap below */
+	  font-size: 18px;
+	}
+	.ministry {
+	  font-size: 13px;
+	  color: #444;
+	  font-style: italic;
+	  margin-top: 0;     /* no gap above */
+	  margin-bottom: 15px;
+	}
     .info p {
       margin: 6px 0;
       font-size: 14px;
@@ -116,10 +117,14 @@
       <p class="ministry">(Ministry of Ports, Shipping and Waterways, Govt. of India)</p>
 
       <div class="info">
-        <p>📍 Traffic Department, 1st Floor, Port House, Ballard Estate,<br>
-        Shoorji Vallabhdas Marg, Mumbai – 400001</p>
+        <p>
+		  <a href="https://www.google.com/maps/place/Mumbai+Port+Authority,+Mumbai" target="_blank">📍</a>
+		  Traffic Department,<br>
+		  1st Floor, Port House, Shoorji Vallabhdas Marg,<br>
+		  Ballard Estate, Mumbai – 400001
+		</p>
         
-        <p>☎️ Tel: <a href="tel:+912266564443">+91 (22) 6656 4443</a><br>
+        <p>☎️ Tel: <a href="tel:+912266564449">+91 (22) 6656 4449</a><br>
         📱 Mob: <a href="tel:+919526062733">+91 9526062733</a></p>
         
         <p>✉️ <a href="mailto:raj.vinod@mumbaiport.gov.in">raj.vinod@mumbaiport.gov.in</a><br>
