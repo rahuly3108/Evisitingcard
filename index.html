@@ -53,7 +53,7 @@
       color: #555;
       font-weight: normal;
     }
-		.company {
+	.company {
 	  font-weight: bold;
 	  margin-bottom: 0;  /* no gap below */
 	  font-size: 18px;
@@ -99,6 +99,13 @@
       fill: #0066cc; /* lighter blue */
       opacity: 0.7;
     }
+	.info { 
+	  position: relative; 
+	  z-index: 2; /* keep address, phone, email above wave */
+	}
+	.wave, .wave.second { 
+	  z-index: 1; /* keep waves behind */
+	}
   </style>
 </head>
 <body>
@@ -118,10 +125,11 @@
 
       <div class="info">
         <p>
-		  <a href="https://www.google.com/maps/place/Mumbai+Port+Authority,+Mumbai" target="_blank">📍</a>
-		  Traffic Department,<br>
-		  1st Floor, Port House, Shoorji Vallabhdas Marg,<br>
-		  Ballard Estate, Mumbai – 400001
+		  <a href="https://www.google.com/maps/dir//20,+Shoorji+Vallabhdas+Rd,+Kala+Ghoda,+Fort,+Mumbai,+Maharashtra+400001/@18.9344398,72.7558494,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3be7d1da8def44a3:0x8589c3445f83f408!2m2!1d72.8382524!2d18.9344279?entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+			📍 Traffic Department,<br>
+			1st Floor, Port House, Shoorji Vallabhdas Marg,<br>
+			Ballard Estate, Mumbai – 400001
+		  </a>
 		</p>
         
         <p>☎️ Tel: <a href="tel:+912266564449">+91 (22) 6656 4449</a><br>
