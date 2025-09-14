@@ -13,7 +13,7 @@
       height: 100vh;
     }
     .card {
-      position: relative; /* allows wave inside */
+      position: relative;
       background: white;
       width: 600px;
       border-radius: 8px;
@@ -21,7 +21,7 @@
       display: flex;
       align-items: center;
       padding: 20px;
-      padding-bottom: 50px; /* extra space at bottom for waves */
+      padding-bottom: 50px;
       overflow: hidden;
     }
     .left {
@@ -53,18 +53,18 @@
       color: #555;
       font-weight: normal;
     }
-	.company {
-	  font-weight: bold;
-	  margin-bottom: 0;  /* no gap below */
-	  font-size: 18px;
-	}
-	.ministry {
-	  font-size: 13px;
-	  color: #444;
-	  font-style: italic;
-	  margin-top: 0;     /* no gap above */
-	  margin-bottom: 15px;
-	}
+    .company {
+      font-weight: bold;
+      margin-bottom: 0;
+      font-size: 18px;
+    }
+    .ministry {
+      font-size: 13px;
+      color: #444;
+      font-style: italic;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
     .info p {
       margin: 6px 0;
       font-size: 14px;
@@ -92,20 +92,35 @@
       height: 100%;
     }
     .wave path {
-      fill: #003366; /* dark navy blue */
+      fill: #003366;
       opacity: 0.9;
     }
     .wave.second path {
-      fill: #0066cc; /* lighter blue */
+      fill: #0066cc;
       opacity: 0.7;
     }
-	.info { 
-	  position: relative; 
-	  z-index: 2; /* keep address, phone, email above wave */
-	}
-	.wave, .wave.second { 
-	  z-index: 1; /* keep waves behind */
-	}
+    .info { 
+      position: relative; 
+      z-index: 2;
+    }
+    .wave, .wave.second { 
+      z-index: 1;
+    }
+    /* Save Contact button */
+    .vcard-btn {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 6px 12px;
+      background: #003366;
+      color: white;
+      border-radius: 4px;
+      font-size: 13px;
+      text-align: center;
+    }
+    .vcard-btn:hover {
+      background: #0055aa;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
@@ -114,6 +129,9 @@
     <div class="left">
       <img src="mbpalogo.jpg" alt="Mumbai Port Logo">
       <p class="cert">ISO 9001:2015 Port / <br>ISPS Compliant Port</p>
+      
+      <!-- Save Contact button moved here -->
+      <a id="download-vcard" class="vcard-btn" href="#">💾 Save Contact</a>
     </div>
 
     <!-- Right side details -->
@@ -125,12 +143,12 @@
 
       <div class="info">
         <p>
-		  <a href="https://www.google.com/maps/dir//20,+Shoorji+Vallabhdas+Rd,+Kala+Ghoda,+Fort,+Mumbai,+Maharashtra+400001/@18.9344398,72.7558494,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3be7d1da8def44a3:0x8589c3445f83f408!2m2!1d72.8382524!2d18.9344279?entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-			📍 Traffic Department,<br>
-			1st Floor, Port House, Shoorji Vallabhdas Marg,<br>
-			Ballard Estate, Mumbai – 400001
-		  </a>
-		</p>
+          <a href="https://www.google.com/maps/dir//20,+Shoorji+Vallabhdas+Rd,+Kala+Ghoda,+Fort,+Mumbai,+Maharashtra+400001/@18.9344398,72.7558494,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3be7d1da8def44a3:0x8589c3445f83f408!2m2!1d72.8382524!2d18.9344279?entry=ttu" target="_blank">
+            📍 Traffic Department,<br>
+            1st Floor, Port House, Shoorji Vallabhdas Marg,<br>
+            Ballard Estate, Mumbai – 400001
+          </a>
+        </p>
         
         <p>☎️ Tel: <a href="tel:+912266564449">+91 (22) 6656 4449</a><br>
         📱 Mob: <a href="tel:+919526062733">+91 9526062733</a></p>
@@ -152,5 +170,29 @@
       </svg>
     </div>
   </div>
+
+  <!-- Script for vCard -->
+  <script>
+    const vcardText = [
+      'BEGIN:VCARD',
+      'VERSION:3.0',
+      'N:Raj Vinod;P.;',
+      'FN:Raj Vinod P.',
+      'TITLE:Senior Deputy Traffic Manager',
+      'ORG:Mumbai Port Authority;Traffic Department',
+      'TEL;TYPE=WORK,VOICE:+91-22-6656-4449',
+      'TEL;TYPE=CELL,VOICE:+91-9526062733',
+      'ADR;TYPE=WORK:;;1st Floor, Port House, Shoorji Vallabhdas Marg;Ballard Estate;Mumbai;Maharashtra;400001;India',
+      'EMAIL:raj.vinod@mumbaiport.gov.in',
+      'URL:https://www.mumbaiport.gov.in',
+      'END:VCARD'
+    ].join('\r\n');
+
+    const blob = new Blob([vcardText], { type: 'text/vcard' });
+    const url = URL.createObjectURL(blob);
+    const link = document.getElementById('download-vcard');
+    link.href = url;
+    link.download = 'Raj_Vinod.vcf';
+  </script>
 </body>
 </html>
